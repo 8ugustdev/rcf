@@ -1,0 +1,70 @@
+name: RCF
+options:
+  bundleIdPrefix: dev.8ugust
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    CODE_SIGN_IDENTITY: "-"
+    DEVELOPMENT_TEAM: ""
+targets:
+  RCF:
+    type: application
+    platform: iOS
+    sources:
+      - RCF
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.8ugust.rcf
+        PRODUCT_NAME: RCF
+        PRODUCT_MODULE_NAME: RCF
+        SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
+        MARKETING_VERSION: "2.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    info:
+      path: RCF/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: RCF
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen: {}
+        NSFaceIDUsageDescription: "RCF uses Face ID to lock access to your Cloudflare dashboard."
+        BGTaskSchedulerPermittedIdentifiers:
+          - rcf.monitor.refresh
+        UIBackgroundModes:
+          - fetch
+        UISupportedInterfaceOrientations~iphone:
+          - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        ITSAppUsesNonExemptEncryption: false
+  RCFTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - RCFTests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/RCF.app/RCF"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+    dependencies:
+      - target: RCF
+schemes:
+  RCF:
+    build:
+      targets:
+        RCF: all
+    test:
+      gatherCoverageData: false
+      targets:
+        - RCFTests
