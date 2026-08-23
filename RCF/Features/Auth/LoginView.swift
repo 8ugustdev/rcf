@@ -77,6 +77,16 @@ struct LoginView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(auth.isVerifying || !inputValid)
+
+                Button {
+                    Task { await auth.startDemo() }
+                } label: {
+                    Label("Try Demo", systemImage: "wand.and.stars")
+                        .font(.subheadline)
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered)
+                .disabled(auth.isVerifying)
             }
             .padding(20)
             .background(.cfSurface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))

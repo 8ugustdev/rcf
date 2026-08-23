@@ -127,6 +127,18 @@ final class AuthViewModel {
         phase = .login
     }
 
+    /// Demo mode: run against canned Cloudflare responses (no network, no
+    /// credential, nothing persisted). Removal: delete this + DemoURLProtocol +
+    /// the login button.
+    func startDemo() async {
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [DemoURLProtocol.self]
+        let client = CloudflareClient(auth: .token("demo"), session: URLSession(configuration: config))
+        let profile = Profile(label: "Demo", auth: .token("demo"))
+        session = await SessionFactory.makeSession(client: client, profile: profile)
+        if session != nil { phase = .authenticated }
+    }
+
     // MARK: - Internals
 
     private func activate(profile: Profile) async {
