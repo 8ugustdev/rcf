@@ -30,6 +30,11 @@ final class AuthViewModel {
 
     /// Entry point: decide the initial phase from persisted state.
     func bootstrap() async {
+        // Screenshot/demo automation: `-demoLaunch` skips login straight into demo mode.
+        if ProcessInfo.processInfo.arguments.contains("-demoLaunch") {
+            await startDemo()
+            return
+        }
         guard let profile = profiles.activeProfile else {
             phase = onboardingDone ? .login : .onboarding
             return

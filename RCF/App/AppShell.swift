@@ -37,6 +37,10 @@ struct AppShell: View {
             await newCache.refresh()
             cache = newCache
             restoreLastZone(in: newCache)
+            // Screenshot automation: open straight into the insights hub.
+            if ProcessInfo.processInfo.arguments.contains("-insightsLaunch") {
+                showingInsights = true
+            }
         }
         .sheet(isPresented: $showingZonePicker) {
             ZonePickerSheet(zones: cache?.zones ?? []) { zone in
