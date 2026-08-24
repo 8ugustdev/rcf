@@ -1,4 +1,5 @@
 import SwiftUI
+import os
 
 /// Zone workspace: the 2.0 home surface. Header stats strip (24h rollup) over
 /// the zone detail grid (reused), with global shell actions in the toolbar.
@@ -20,6 +21,7 @@ struct ZoneWorkspaceView: View {
                 }
             }
             .task(id: zone.id) {
+                ZoneStatsLog.debug("strip task zone=\(zone.id) allowed=\(session.permissions.analytics)")
                 stats = await ZoneStatsService.zoneTotals(
                     client: session.client,
                     analyticsAllowed: session.permissions.analytics,
@@ -33,6 +35,8 @@ struct ZoneWorkspaceView: View {
     private var statsStrip: some View {
         HStack(spacing: 0) {
             if let stats {
+                stripTitle
+                Divider().frame(height: 24)
                 stat(Formatters.compact(stats.requests.all), "requests")
                 Divider().frame(height: 24)
                 stat(stats.requests.all > 0
@@ -40,6 +44,7 @@ struct ZoneWorkspaceView: View {
                      : "—", "cached")
                 Divider().frame(height: 24)
                 stat(Formatters.compact(stats.threats.all), "threats")
+                Divider().frame(height: 24)
                 stat(Formatters.compact(stats.uniques.all), "visitors")
             } else {
                 Label("24h analytics unavailable for this token", systemImage: "chart.xyaxis.line")
@@ -55,6 +60,21 @@ struct ZoneWorkspaceView: View {
         .background(.cfFooter)
         .onTapGesture(perform: onSwitchZone)
         .accessibilityLabel("24 hour stats. Tap to switch zone.")
+    }
+
+    /// Leading label identifying the strip ("Last 24h").
+    private var stripTitle: some View {
+        VStack(spacing: 1) {
+            Image(systemName: "chart.xyaxis.line")
+                .font(.caption2.weight(.semibold))
+                .foregroundStyle(.cfTextSecondary)
+            Text("Last 24h")
+                .font(.caption2)
+                .foregroundStyle(.cfTextTertiary)
+        }
+        .fixedSize()
+        .padding(.horizontal, 2)
+        .accessibilityHidden(true) // covered by strip's accessibilityLabel
     }
 
     private func stat(_ value: String, _ label: String) -> some View {

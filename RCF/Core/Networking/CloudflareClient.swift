@@ -68,6 +68,10 @@ nonisolated final class CloudflareClient: Sendable, @unchecked Sendable {
         do {
             return try JSONDecoder().decode(GraphQLEnvelope<Response>.self, from: data).data
         } catch {
+            // Surface the raw GraphQL error payload — envelope decode failures
+            // otherwise hide the server's rejection reason.
+            let body = String(data: data.prefix(600), encoding: .utf8) ?? "<binary>"
+            ZoneStatsLog.error("graphql decode failed: \(String(describing: error), privacy: .public) body=\(body, privacy: .public)")
             throw CloudflareError.decoding(error)
         }
     }
