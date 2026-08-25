@@ -922,7 +922,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.8ugust.rcf;
 				PRODUCT_MODULE_NAME = RCF;
 				PRODUCT_NAME = RCF;
@@ -944,7 +944,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.8ugust.rcf;
 				PRODUCT_MODULE_NAME = RCF;
 				PRODUCT_NAME = RCF;
