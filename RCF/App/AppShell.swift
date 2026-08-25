@@ -16,6 +16,7 @@ struct AppShell: View {
     @State private var showingPalette = false
     @State private var purgeURLZone: Zone?
     @State private var showingInsights = false
+    @State private var dnsLaunchZone: Zone?
 
     private let defaults: UserDefaults
 
@@ -37,6 +38,7 @@ struct AppShell: View {
             await newCache.refresh()
             cache = newCache
             restoreLastZone(in: newCache)
+            applyLaunchHooks(cache: newCache)
             // Screenshot automation: open straight into the insights hub.
             if ProcessInfo.processInfo.arguments.contains("-insightsLaunch") {
                 showingInsights = true
@@ -74,6 +76,10 @@ struct AppShell: View {
         }
         .sheet(item: $purgeURLZone) { zone in
             PurgeURLSheet(zone: zone, session: session)
+        }
+        .sheet(item: $dnsLaunchZone) { zone in
+            NavigationStack { DNSRecordsView(zone: zone, session: session) }
+                .presentationBackground(.cfBackground)
         }
         .sheet(isPresented: $showingServices) {
             NavigationStack { ServicesView() }
@@ -184,6 +190,25 @@ struct AppShell: View {
             activeZone = zone
         }
         // else: leave nil → zone browser until user picks one.
+    }
+
+    /// Screenshot automation: launch straight into a zone workspace and/or a
+    /// deep surface (DNS records, account services, command palette).
+    private func applyLaunchHooks(cache: ZoneCache) {
+        let args = ProcessInfo.processInfo.arguments
+        guard args.contains(where: ["-zoneLaunch", "-dnsLaunch", "-servicesLaunch", "-paletteLaunch"].contains) else { return }
+        if activeZone == nil, let first = cache.zones.first {
+            activate(first)
+        }
+        if args.contains("-dnsLaunch") {
+            dnsLaunchZone = activeZone ?? cache.zones.first
+        }
+        if args.contains("-servicesLaunch") {
+            showingServices = true
+        }
+        if args.contains("-paletteLaunch") {
+            showingPalette = true
+        }
     }
 
     private func activate(_ zone: Zone) {
