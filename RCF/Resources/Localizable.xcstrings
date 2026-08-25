@@ -1,7 +1,431 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "…" : {
 
+    },
+    "“%@” will be removed permanently." : {
+
+    },
+    "*" : {
+
+    },
+    "#%@" : {
+
+    },
+    "%@" : {
+
+    },
+    "%@  %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@  %2$@"
+          }
+        }
+      }
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%@ • %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ • %2$@"
+          }
+        }
+      }
+    },
+    "%@ req" : {
+
+    },
+    "%@ rows" : {
+
+    },
+    "%@ rows • %@s • read %@ • wrote %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ rows • %2$@s • read %3$@ • wrote %4$@"
+          }
+        }
+      }
+    },
+    "%@ selected" : {
+
+    },
+    "%@ threats" : {
+
+    },
+    "%@–%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@–%2$@"
+          }
+        }
+      }
+    },
+    "%@.pages.dev" : {
+
+    },
+    "%@/100" : {
+
+    },
+    "%@%%" : {
+
+    },
+    "%@%% cached" : {
+
+    },
+    "• %@" : {
+
+    },
+    "• v%@" : {
+
+    },
+    "→ %@" : {
+
+    },
+    "⏎" : {
+
+    },
+    "1D" : {
+
+    },
+    "7D" : {
+
+    },
+    "30D" : {
+
+    },
+    "Account-wide. New destinations receive a verification email before use." : {
+
+    },
+    "Actions" : {
+
+    },
+    "Add these at your registrar (or via the DNS tab) for routing to activate." : {
+
+    },
+    "Add this record at your registrar to complete activation." : {
+
+    },
+    "AI features are optional. When used, the displayed zone snapshot or activity is sent directly to the OpenAI-compatible provider you configure. RCF does not proxy or retain those requests." : {
+
+    },
+    "All" : {
+
+    },
+    "All cached assets for %@ will be removed worldwide." : {
+
+    },
+    "All keys in “%@” will be lost." : {
+
+    },
+    "Apex (%@)" : {
+
+    },
+    "API Token" : {
+
+    },
+    "Argo" : {
+
+    },
+    "Argo Smart Routing requires a paid Cloudflare plan or a token with the Zone:Edit + Argo permission." : {
+
+    },
+    "Auto" : {
+
+    },
+    "Background checks are best-effort on iOS; opening the app triggers a check if due." : {
+
+    },
+    "BIND zone file from your registrar or a previous export. Records are added — existing ones are untouched." : {
+
+    },
+    "Bucket “%@” must be empty to delete." : {
+
+    },
+    "Bypasses Cloudflare cache for 3 hours." : {
+
+    },
+    "Catch-All" : {
+
+    },
+    "Cloudflare will stop processing email for this zone. MX records may be removed." : {
+
+    },
+    "Cloudflare, native on iOS" : {
+
+    },
+    "Created %@" : {
+
+    },
+    "Custom Rules" : {
+
+    },
+    "Delete %@ record “%@”?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Delete %1$@ record “%2$@”?"
+          }
+        }
+      }
+    },
+    "Destination Addresses" : {
+
+    },
+    "Development Mode" : {
+
+    },
+    "Drop" : {
+
+    },
+    "DS Record" : {
+
+    },
+    "Email" : {
+
+    },
+    "Encryption Mode" : {
+
+    },
+    "exp %@" : {
+
+    },
+    "Export" : {
+
+    },
+    "Expression" : {
+
+    },
+    "Forward" : {
+
+    },
+    "Full Purge" : {
+
+    },
+    "Full URLs on %@, e.g. https://%@/style.css" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Full URLs on %1$@, e.g. https://%2$@/style.css"
+          }
+        }
+      }
+    },
+    "Global API Key" : {
+
+    },
+    "Hosting" : {
+
+    },
+    "Import" : {
+
+    },
+    "IP Access" : {
+
+    },
+    "Last 24h" : {
+
+    },
+    "Legacy" : {
+
+    },
+    "Legacy rule will be removed." : {
+
+    },
+    "Masks emails, profile identifiers, and account details on screen." : {
+
+    },
+    "Matchers and actions in priority order." : {
+
+    },
+    "Modified %@" : {
+
+    },
+    "Monitoring configuration and alert history are stored in the Keychain. Notifications are local and background execution is best-effort." : {
+
+    },
+    "Multipart PUT — values up to 25 MB." : {
+
+    },
+    "Native iOS implementation built with SwiftUI and Apple frameworks; no third-party runtime dependencies." : {
+
+    },
+    "No active certificate packs" : {
+
+    },
+    "No custom rules" : {
+
+    },
+    "No deployments" : {
+
+    },
+    "No matches" : {
+
+    },
+    "No user tables" : {
+
+    },
+    "No verified destinations — add one below first." : {
+
+    },
+    "One full URL per line (up to 30)." : {
+
+    },
+    "Optimizes routing between Cloudflare datacenters and your origin." : {
+
+    },
+    "Overview" : {
+
+    },
+    "Pending verification" : {
+
+    },
+    "prio %@" : {
+
+    },
+    "Project “%@” and its deployments will be removed." : {
+
+    },
+    "Purge by URL" : {
+
+    },
+    "Quick Toggles" : {
+
+    },
+    "Raw BIND text from Cloudflare — share or save via the share sheet." : {
+
+    },
+    "RCF" : {
+
+    },
+    "RCF has no analytics or advertising SDK. Cloudflare credentials and AI API keys are stored in the iOS Keychain and are not synced to other devices." : {
+
+    },
+    "RCF is an unofficial Cloudflare manager and is not affiliated with or endorsed by Cloudflare, Inc." : {
+
+    },
+    "RCF is locked" : {
+
+    },
+    "Removes all cached files for %@. Type the zone name to confirm." : {
+
+    },
+    "Requests are sent directly from your device to the Cloudflare API using the profile you configure." : {
+
+    },
+    "Required DNS Records" : {
+
+    },
+    "Review DNS, SSL, firewall, and zone settings." : {
+
+    },
+    "Rule “%@” will stop matching immediately." : {
+
+    },
+    "Rule for %@ will be removed." : {
+
+    },
+    "Rules" : {
+
+    },
+    "Running…" : {
+
+    },
+    "Runs against %@. Write statements ask for confirmation." : {
+
+    },
+    "Saved profiles remain on this device." : {
+
+    },
+    "Security" : {
+
+    },
+    "Settings" : {
+
+    },
+    "Sign In" : {
+
+    },
+    "SQL" : {
+
+    },
+    "Status" : {
+
+    },
+    "Subdomain" : {
+
+    },
+    "System Default" : {
+
+    },
+    "The stored credential for “%@” will be deleted from the Keychain." : {
+
+    },
+    "This modifies your database. Continue?" : {
+
+    },
+    "This removes DNSSEC protection from the zone." : {
+
+    },
+    "This removes the zone from Cloudflare. Type the zone name to confirm." : {
+
+    },
+    "This rule stops matching traffic immediately." : {
+
+    },
+    "TLS %@" : {
+
+    },
+    "URLs (one per line)" : {
+
+    },
+    "Value" : {
+
+    },
+    "Verification" : {
+
+    },
+    "Version %@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Version %1$@ (%2$@)"
+          }
+        }
+      }
+    },
+    "Worker" : {
+
+    },
+    "Zone configuration and activity are processed on this device and are not sent to an external AI provider." : {
+
+    },
+    "Zone configuration and activity selected for AI analysis will be sent to your configured provider. Your API key remains in this device’s Keychain." : {
+
+    },
+    "Zones" : {
+
+    }
   },
   "version" : "1.0"
 }

@@ -87,6 +87,10 @@ struct LoginView: View {
                 }
                 .buttonStyle(.bordered)
                 .disabled(auth.isVerifying)
+                Text("Demo explores RCF with sample data — no account or Cloudflare credential required.")
+                    .font(.caption2)
+                    .foregroundStyle(.cfTextSecondary)
+                    .multilineTextAlignment(.center)
             }
             .padding(20)
             .background(.cfSurface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))

@@ -16,6 +16,7 @@ struct AboutView: View {
             Section("About") {
                 Text("RCF is an unofficial Cloudflare manager and is not affiliated with or endorsed by Cloudflare, Inc.")
                 NavigationLink("Privacy") { PrivacyView() }
+                Link("Website", destination: URL(string: "https://rcf.8ugust.dev/")!)
             }
             Section("Implementation") {
                 Text("Native iOS implementation built with SwiftUI and Apple frameworks; no third-party runtime dependencies.")
@@ -33,6 +34,9 @@ struct PrivacyView: View {
             Section("Cloudflare") { Text("Requests are sent directly from your device to the Cloudflare API using the profile you configure.") }
             Section("AI") { Text("AI features are optional. When used, the displayed zone snapshot or activity is sent directly to the OpenAI-compatible provider you configure. RCF does not proxy or retain those requests.") }
             Section("Monitoring") { Text("Monitoring configuration and alert history are stored in the Keychain. Notifications are local and background execution is best-effort.") }
+            Section {
+                Link("Full privacy policy", destination: URL(string: "https://rcf.8ugust.dev/policy/")!)
+            }
         }.navigationTitle("Privacy")
         .inkList()
     }
