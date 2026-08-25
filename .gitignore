@@ -1,7 +1,6 @@
 .DS_Store
 DerivedData/
 build/
-*.xcodeproj
 xcuserdata/
 .cf-openapi.json
 
